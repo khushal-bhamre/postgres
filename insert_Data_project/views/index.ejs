@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting SQL</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="/new" method="post">
+            <label for="name">Name: </label><input type="text" id="name" name="userName" required>
+            <label for="age">Age: </label><input type="text" id="age" name="userAge" required>
+            <label for="city">City: </label><input type="text" id="city" name="userCity" required>
+            <button type="submit">Enroll to Bootcamp</button>
+        </form>
+    </div>
+
+    <div class="display">
+        <h2>List of All Students</h2>
+        <ol>
+            <% if (locals.students) { %>
+                <% let array = locals.students %>
+                <% array.forEach(student => { %>
+                    <li><%= student.name %></li>
+                <%});%>
+            <% } %>
+        </ol>
+    </div>
+
+</body>
+
+</html>
