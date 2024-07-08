@@ -57,7 +57,7 @@ CREATE TABLE posts (
 -- Many-to-Many Relationship
 -- Example: Users and Interests
 
-In a many-to-many relationship, each record in Table A can have many matching records in Table B, and vice versa.
+-- In a many-to-many relationship, each record in Table A can have many matching records in Table B, and vice versa.
 
 CREATE TABLE users (
     user_id INT PRIMARY KEY,

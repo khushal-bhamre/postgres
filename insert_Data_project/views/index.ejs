@@ -15,22 +15,41 @@
             <label for="name">Name: </label><input type="text" id="name" name="userName" required>
             <label for="age">Age: </label><input type="text" id="age" name="userAge" required>
             <label for="city">City: </label><input type="text" id="city" name="userCity" required>
+            <label for="course">Courses</label>
+            <select name="courses" id="course" multiple required>
+                <% courses.forEach(course => { %>
+                    <option value="<%= course.id %>"><%= course.name %></option>
+                <% }) %>
+            </select>
             <button type="submit">Enroll to Bootcamp</button>
+        </form>
+        
         </form>
     </div>
 
     <div class="display">
         <h2>List of All Students</h2>
         <ol>
-            <% if (locals.students) { %>
-                <% let array = locals.students %>
-                <% array.forEach(student => { %>
-                    <li><%= student.name %></li>
-                <%});%>
+            <% if (students) { %>
+                <% students.forEach(student => { %>
+                    <li>
+                        <%= student.name %> - 
+                        <% if (enrollments[student.id]) { %>
+                            <div class="course-list">
+                                Enrolled in: 
+                                <% enrollments[student.id].courses.forEach(course => { %>
+                                    <span><%= course %></span>
+                                <% }) %>
+                            </div>
+                        <% } else { %>
+                            Not enrolled in any courses
+                        <% } %>
+                    </li>
+                <% }) %>
             <% } %>
         </ol>
     </div>
-
+    
 </body>
 
 </html>

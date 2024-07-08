@@ -11,8 +11,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    /* background: url('/path/to/your/background-image.jpg') no-repeat center center fixed; */
-    /* background-size: cover; */
     color: #333;
 }
 
@@ -48,7 +46,7 @@ body {
     color: #444;
 }
 
-.container input {
+.container input, .container select {
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -57,8 +55,12 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.container input:focus {
+.container input:focus, .container select:focus {
     border-color: #007bff;
+}
+
+.container select {
+    height: auto;
 }
 
 .display {
@@ -119,4 +121,20 @@ button {
 button:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
+}
+
+/* Additional Styling for Course Display */
+.course-list {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+.course-list span {
+    display: inline-block;
+    margin-right: 5px;
+    /* background-color: #007bff; */
+    /* color: #fff; */
+    padding: 2px 5px;
+    border-radius: 3px;
 }
